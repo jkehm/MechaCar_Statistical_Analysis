@@ -1,4 +1,4 @@
-# Deliverable 1
+# MechCarChallenge -- Module 16 Challenge
 # Part 1: Linear Regression to Predict MPG
 
 # Load in dependencies
@@ -9,6 +9,14 @@ mecha_mpgs <- read.csv(file= '../MechaCar_Statistical_Analysis/MechaCar_mpg.csv'
 lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD, mecha_mpgs)
 # Use summary() function, determine p and r-squard values
 summary(lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD, mecha_mpgs))
-# Save this RScript to GitHub
+# Once completed, commit items to GitHub
 
-# 
+# Part 2: Create Visualizations for the Trip Analysis
+
+# Import and read in Suspension_Coil.csv
+suspension_coil <- read.csv(file = '../MechaCar_Statistical_Analysis/Suspension_Coil.csv')
+# Create total_summary df
+total_summary <- suspension_coil %>% summarise(Mean=mean(PSI), Median=median(PSI), Variance=var(PSI), SD=sd(PSI))
+# Create lot_summary df 
+lot_summary<- suspension_coil %>% group_by(Manufacturing_Lot) %>% summarize(Mean=mean(PSI), Median=median(PSI), Variance=var(PSI), SD=sd(PSI))
+# Once complete, push items to GitHub
