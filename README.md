@@ -34,14 +34,35 @@ To determine this we need to take a look at our r-squared value, which is 0.7149
 Yes and no. When we perform the first an summary table first the entire dataset, the variance of 62.294psi is within the 100psi design specification. However, when we break this data into lots in the second summary, we see a different picture. The variance for Lots 1 and 2 are very much within our design specification, and Lot1 is very impressive. Lot 3 however, shows a variance of 170.286psi. Which is extremely far above our design specification. So I would implore the manufacturing engineers to see what is going on in Lot 3. Is it a staff issue, is the tooling wearing quicker than we expect, or see if there is a totally different issue going on. 
 
 ## Deliverable 3: T-Tests on Suspension Coils
+In Deliverable 3 of the calculation we will perform a T-Test on the all of the lots combined, as well as each lot seperately. This way we will be able to see if there is any of these lots are statistically different from the population mean of 1,500 psi. 
+
 ![Hopefully another other other other image](https://github.com/jkehm/MechaCar_Statistical_Analysis/blob/main/images/one_sample_t-test_deliv_3.png)
+
+From the above image it is clear that the p-value of 0.06028 is greater than our assumed significane level of 0.05. This means that we do not have sufficient evidence to reject the null hypothesis, and we will accept the null hypothesis. Which means, when looking at all lots combiened the PSI is statistically similar to the population mean of 1,500. 
 
 ![Hopefully another other other other other image](https://github.com/jkehm/MechaCar_Statistical_Analysis/blob/main/images/lot_1_t-test_deliv_3.png)
 
+Based on our T-Test on just Lot 1, we return a P-Value of 1. This means that the observed sample mean perfectly matches the presumed population mean of 1,500 PSI. We can conclude that the PSI value for manufacturing lot 2 is exactly 1,500 PSI. 
+
 ![Hopefully another other other other other other image](https://github.com/jkehm/MechaCar_Statistical_Analysis/blob/main/images/lot_2_t-test_deliv_3.png)
+
+In our analysis for Lot 2, we are returned a P-Value of 0.6072. Which is larger than our assumed significance levl of 0.05. Therefore, we do not have sufficient evidence to reject the null hypothesis. The PSI for manufacturing lot is statistically similar to the population mean of 1,500 PSI.
 
 ![Hopefully another other other other other other other image](https://github.com/jkehm/MechaCar_Statistical_Analysis/blob/main/images/lot_3_t-test_deliv_3.png)
 
-#### Findings from the T-Test
+As we can see from the above T-Test screenshot the P-value is 0.04168, which is less than our assumed significance level of 0.05. Therefore, we do not have sufficient evidence to reject the null hypothesis, and must accept the alternative hypothesis. We can say that the PSI for manufacturing lot 3 is statistically not equal to 1,500 PSI. Which supports our conclusion in Deliverable 2. 
 
-## Deliverable 4: Study Design: MechCar vs Competition
+## Deliverable 4: Study Design: MechaCar vs Competition
+
+In the last section we will design a statistic study to look at other metrics that could be compared to the competition. 
+
+#### What metric will be tested
+I believe that the first statistic that people considering a new car look at is the price. So, we will perform a study to take a look into similar vehicles to the MechaCar and compare thier prices. If we can be around the average for the vehcile type, I believe the MechaCar has a much bigger chance of success.
+#### Null and Alternative Hypothesis
+**H<sub>o</sub>:** The mean value for the cost of any vehicle in this segment is equal.
+
+**H<sub>a</sub>:** At least one of the vehicles in this segment will have a different mean cost. 
+#### Statistical Test to be performed
+For this we would use an One-Way ANOVA test. This way we can test the mean cost of the MechaCar when compared to its competition. 
+#### Data for statistical test is described
+We would need the selling cost for different vehicles in the same class at the MechaCar. A dataset of about 5 different cars, as well as the MechaCar should be a sufficient size. And for each model of car, we should find the selling cost of the last 50. This should be a sufficient data size giving us enough information to perform the analysis. 
